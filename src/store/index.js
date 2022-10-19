@@ -31,7 +31,7 @@
 
 // This Hiding Code means I am showing Toggle functionality in down and If we want normal functionality we can use upper code
 
-
+import {configureStore} from '@reduxjs/toolkit'; 
 const initialState = {counter: 0, showCounter: true}
 
 
@@ -66,6 +66,8 @@ const counterReducer = (state = initialState,action) =>{
  return state;
 };
 
-const store = createStore(counterReducer);
+const store = configureStore({
+    reducer: counterReducer
+});
 
 export default store;
